@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>captcha code</title>
+    <style>
+        button{
+            background-color: black;
+            color: white;
+            border-radius: 5px;
+            border: solid;
+            border-color: black;
+        }
+        button:hover{
+            background-color: rgb(15, 15, 15);
+            color: gray;
+            border-radius: 8px;
+            border-color: rgb(15, 15, 15);
+        }
+        button:active{
+            background-color:gray;
+            color: rgb(0, 0, 0);
+            border-radius: 8px;
+            border-color: rgb(0, 0, 0);
+        }
+        #container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: gray;
+            border-radius: 10px;
+            margin: 20px;
+            padding: 10px;
+        }
+        #output {
+            font-family: arial;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            height: 20px;
+            width: 100px;
+            border-style: solid;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <button onclick="captcha()">captcha code</button>
+    <div id="output"></div>
+</div>
+
+    <script>
+        function captcha()
+        {
+        var output = document.getElementById("output");
+        var num = Math.random()*100000;
+        var number = Math.floor(num);
+        output.innerHTML = "code : " + number ;
+        }
+    </script>
+
+</body>
+</html>
